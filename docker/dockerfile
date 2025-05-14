@@ -101,3 +101,12 @@ RUN pip install transformations einops scikit-image awscli-plugin-endpoint gputi
 
 RUN apt-get update --fix-missing && \
     apt install -y rsync lbzip2 pigz zip p7zip-full p7zip-rar
+
+
+RUN apt-get update &&\
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test && \
+    apt-get update &&\
+    apt-get install -y libstdc++6
+
+RUN pip install yacs
